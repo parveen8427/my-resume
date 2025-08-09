@@ -19,7 +19,8 @@ const Home = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <div className="container mx-auto px-4 py-8">
-        <div className="space-y-12">
+        {/* Added id="resume-content" for PDF generation */}
+        <div id="resume-content" className="space-y-12 max-w-4xl mx-auto">
           <Profile />
           <About />
           <Skills />
