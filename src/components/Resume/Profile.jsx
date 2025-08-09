@@ -13,10 +13,6 @@ const Profile = () => {
             src={resumeData.profile.image}
             alt={resumeData.profile.name}
             className="w-full h-full object-cover"
-            style={{
-              maxWidth: "10%",
-              maxHeight: "10%",
-            }}
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = "https://via.placeholder.com/200";

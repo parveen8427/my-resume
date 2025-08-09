@@ -11,16 +11,13 @@ const Skills = () => {
         <h2 className="text-2xl font-bold mb-4 text-gray-800 border-b pb-2 border-indigo-100">
           Skills
         </h2>
-        <div className="flex flex-wrap gap-3">
+        <ul className="list-disc list-inside space-y-2">
           {resumeData.skills.items?.map((skill, index) => (
-            <span
-              key={index}
-              className="px-3 py-1.5 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium hover:bg-indigo-200 transition-colors"
-            >
+            <li key={index} className="text-gray-700 text-base">
               {skill}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

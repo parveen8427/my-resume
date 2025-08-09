@@ -60,28 +60,49 @@ const AdminDashboard = () => {
   };
 
   const handleArrayItemChange = (index, field, value) => {
+    const key =
+      editingSection === "education"
+        ? "degrees"
+        : editingSection === "experience"
+        ? "jobs"
+        : "items";
+
     setTempData((prev) => {
-      const newItems = [...prev.items];
-      newItems[index] =
-        field === undefined ? value : { ...newItems[index], [field]: value };
-      return { ...prev, items: newItems };
+      const newArray = [...(prev[key] || [])];
+      newArray[index] =
+        field === undefined ? value : { ...newArray[index], [field]: value };
+      return { ...prev, [key]: newArray };
     });
   };
 
   const addArrayItem = () => {
+    const key =
+      editingSection === "education"
+        ? "degrees"
+        : editingSection === "experience"
+        ? "jobs"
+        : "items";
+
     setTempData((prev) => ({
       ...prev,
-      items: [
-        ...(prev.items || []),
+      [key]: [
+        ...(prev[key] || []),
         editingSection === "skills" || editingSection === "languages" ? "" : {},
       ],
     }));
   };
 
   const removeArrayItem = (index) => {
+    const key =
+      editingSection === "education"
+        ? "degrees"
+        : editingSection === "experience"
+        ? "jobs"
+        : "items";
+
     setTempData((prev) => ({
       ...prev,
-      items: prev.items.filter((_, i) => i !== index),
+      [key]: prev[key].filter((_, i) => i !== index),
     }));
   };
 

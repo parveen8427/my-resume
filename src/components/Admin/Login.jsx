@@ -5,8 +5,8 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 const Login = () => {
   const supabase = useSupabaseClient();
   const navigate = useNavigate();
-  const [email, setEmail] = useState("parveen6286@gmail.com");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
